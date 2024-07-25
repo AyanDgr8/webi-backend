@@ -7,9 +7,9 @@ import { Participants } from '../models/participants.js';
 const router = Router();
 
 // Common function to handle saving user details
-const saveUserDetails = async (req, res, ParticipantsModel) => {
+const saveUserDetails = async (req, res, Participants) => {
     try {
-      const user = new ParticipantsModel(req.body);
+      const user = new Participants(req.body);
       const savedUser = await user.save();
       console.log('User details saved successfully:', savedUser);
       res.json(savedUser);
@@ -22,7 +22,7 @@ const saveUserDetails = async (req, res, ParticipantsModel) => {
 
 // Endpoint for user details from bookform
 router.post('/webinar-registration', async (req, res) => {
-  await saveUserDetails(req, res, ParticipantsModel);
+  await saveUserDetails(req, res, Participants);
 });
 
 
