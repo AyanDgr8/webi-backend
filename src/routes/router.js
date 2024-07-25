@@ -21,7 +21,7 @@ const saveUserDetails = async (req, res, Participants) => {
 
 
 // Endpoint for user details from bookform
-router.post('/webinar-registration', async (req, res) => {
+router.post('/', async (req, res) => {
   await saveUserDetails(req, res, Participants);
 });
 
